@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Alarm Clock" content="Alarm Clock" />
+    <title>Alarm Clock</title>
+ <!-- fontawesome kit link-->
+    <script src="https://kit.fontawesome.com/14097a442a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="media\website-logo.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Page Title -->
+    <div class="page-title">
+
+        <!-- navbar showing contact icons as header-->
+        <span id="creator"> Contact Creator at: </span>
+  
+        <span class="icon"><a href="https://www.facebook.com/decent.rohitsoni"><i class="fa-brands fa-facebook" style="color: #0a70f5;"></i></i></a></span>
+        <span class="icon"><a href="https://www.instagram.com/decent_rohit_/"><i class="fa-brands fa-instagram" style="color: #a52236;"></i></a></span>
+        <span class="icon"><a href="https://www.linkedin.com/in/rohit-soni-81957828a/"><i class="fa-brands fa-linkedin" style="color: #1e30b8;"></i></a></span>
+        <span class="icon"><a href="https://twitter.com/decentRohit47"><i class="fa-brands fa-square-twitter" style="color: #02c2f2;"></i></a></span>
+        <span class="icon"><a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtWvNBrVNTxwQhvTGFMThqfthQJsztphvbDSzxLtqZTLvBTNRfVrjhJzcpzdCvKQXSwLjx"><i class="fa-solid fa-envelope" style="color: #d0c11b;"></i></a></span>
+    </div>
+    <div id="popupContainer" class="overlay">
+        <!-- The popup container -->
+        <div class="popup">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>Alarm is ringing..press "Stop" to end</p>
+            <button id="stopAlarm" onclick="stopAlarm()">Stop Alarm</button>
+        </div>
+    </div>
+    <!-- Main Container -->
+    <div class="main-container d-flex">
+
+        <!-- Clock Container -->
+        <div class="clock-container d-flex">
+            <!-- Main wrapper -->
+            <div class="wrapper flex">
+                <div class="container">
+                    <img src="media/website-logo.png" alt="Logo" class="logo">
+                </div>
+
+                
+                <!-- Date and Time -->
+         <div class="datetime">
+         <div class="date">
+                <span id="week">Week</span>,
+                <span id="month">Month</span>,
+                <span id="date">00</span>,
+                <span id="year">Year</span>
+         </div>
+         </div>
+
+                    <div class="current-time mb" id="current-time">00: 00: 00</div>
+
+                    <!-- Alarm Form -->
+                    <form class="alarm-form d-flex mb">
+                        <div>
+                            <select name="hours" id="hours" required></select>
+                            <select required name="minutes" id="minutes"></select>
+                            <select required name="seconds" id="seconds"></select>
+                            <select required name="am-pm" id="am-pm">
+                                <option value="AM/PM" selected hidden>AM/PM</option>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <button class="btn submit-button" id="submitButton" type="submit">Set Alarm</button><br>
+                    </form>
+
+                    <!-- Stop Alarm Button -->
+                    <button id="stopAlarm" onclick="stopAlarm()">Stop Alarm</button>
+
+                    <!-- Set Alarm Container -->
+                    <div class="set-alarm-container">
+                        <div class="set-alarm-container-title mb">RECENT ALARMS</div>
+
+                        <div class="alarms-container" id="alarms-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- link JavaScript File -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
